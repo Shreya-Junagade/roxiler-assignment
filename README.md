@@ -1,52 +1,41 @@
-Backend Task Data Source THIRD PARTY API URL : https://s3.amazonaws.com/roxiler.com/product_transaction.json REQUEST METHOD : GET RESPONSE FORMAT : JSON
+# Frontend
 
-GET Create API to initialize the database. fetch the JSON from the third party API and initialize the database with seed data. You are free to define your own efficient table / collection structure
+This frontend project is designed to interact with the backend APIs created for managing and analyzing product transactions. The frontend provides a user interface with a table and charts based on the fetched data from the backend.
 
-Instruction All the APIs below should take month ( expected value is any month between January to December) as an input and should be matched against the field dateOfSale regardless of the year.
+## Usage
 
-GET Create an API to list the all transactions
+To use the frontend application, follow the instructions below:
 
-API should support search and pagination on product transactions
-Based on the value of search parameters, it should match search text on product title/description/price and based on matching result it should return the product transactions
-If search parameter is empty then based on applied pagination it should return all the records of that page number
-Default pagination values will be like page = 1, per page = 10
-GET Create an API for statistics
+1. Ensure the backend API is deployed and accessible.
+2. Clone the frontend repository to your local machine.
+3. Install the necessary dependencies using the package manager of your choice (e.g., npm or yarn).
+4. npm install or yarn install
 
-Total sale amount of selected month
-Total number of sold items of selected month
-Total number of not sold items of selected month
-GET Create an API for bar chart ( the response should contain price range and the number of items in that range for the selected month regardless of the year )
+## Features
 
-0 - 100
-101 - 200
-201-300
-301-400
-401-500
-501 - 600
-601-700
-701-800
-801-900
-901-above
-GET Create an API for pie chart Find unique categories and number of items from that category for the selected month regardless of the year. For example :
+### Transactions Table
 
-X category : 20 (items)
-Y category : 5 (items)
-Z category : 3 (items)
-GET Create an API which fetches the data from all the 3 APIs mentioned above, combines the response and sends a final response of the combined JSON
+## Select Month Dropdown
+1. Displays January to December months as options.
+2. Defaults to March month.
+3. Allows selecting a different month to display transactions.
+## Transactions List
+1. Utilizes the transactions listing API to list transactions in a table.
+2. Displays transactions of the selected month irrespective of the year using the API.
+3. Search transaction box filters transactions based on title/description/price using the API.
+4. Clears the search box to display the initial list of transactions for the selected month using the API.
+5. Next and Previous buttons load the next and previous page data from the API.
+## Transactions Statistics
+1. Displays total sale amount, total sold items, and total not sold items for the selected month.
+2. Fetches data from the created API to populate the statistics box.
+## Transactions Bar Chart
+1. Displays a bar chart showing the price range and the number of items in that range for the selected month.
+2. Applies the selected month from the dropdown (above the table) to fetch data from the API.
 
-Frontend Task
+Enjoy using the product transaction management system!
 
-By using above created apis, create the following table and charts on single page. Follow the given mockups and you can implement your own design to change the look and feel Transctions Table
-
-Here use your transactions listing api to list transactions in the table
-Select month dropdown should display Jan to Dec months as an options
-By default March month should be selected
-Table should list the transactions of the selected month irrespective of the year using API
-Search transaction box should take an input and if search text is matching with anyone of these title/description/price then those transactions of the selected month should come in the list using API
-If user clear’s the search box then initial list of transactions should be displayed for the selected month using API
-On click of Next it should load the next page data from API
-On click of Previous it should load the previous page data from API
-Transctions Statistics (Use your created API to fetch the data)
+## Deployment
+The frontend application is deployed and can be accessed easily
 
 Here display total amount of sale, total sold items, and total not sold item in the box for the selected month from the drop down (present above table) using API
 Transactions Bar Char (Use your created API to fetch the data)
